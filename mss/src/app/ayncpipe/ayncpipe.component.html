@@ -1,0 +1,6 @@
+<p>ayncpipe works!</p>
+<button (click)="show()">Show</button>
+<div *ngFor="let m of users | async">
+    {{m.id}} {{m.title}}
+</div>
+<p appCustomd >Hello This is a custom directive</p>

@@ -1,0 +1,20 @@
+input.ng-touched.ng-invalid{
+    border-style: solid;
+    border-color: red;
+    border-width:3px;
+}
+input.ng-touched.ng-valid{
+    border-style: solid;
+    border-color: rgb(36, 219, 11);
+    border-width:3px;
+}
+p{
+    color:red;
+}
+.active
+{
+    color:rgb(196, 10, 10)
+}
+label{
+    color:blueviolet
+}

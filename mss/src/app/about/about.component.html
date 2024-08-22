@@ -1,0 +1,35 @@
+<ul>
+    <li>
+       <a [routerLink]="['/about']" routerLinkActive="active">about</a>
+    </li>
+    <li>
+        <a [routerLink]="['/users']" routerLinkActive="active">users</a>
+    </li>
+    <li>
+        <a [routerLink]="['/notfound']" routerLinkActive="active">notfound</a>
+    </li>
+    <li>
+        <a [routerLink]="['/emp']" routerLinkActive="active">emp</a>
+    </li>
+    <li>
+        <a [routerLink]="['/empdet']" routerLinkActive="active">empdet</a>
+    </li>
+    <li>
+        <a [routerLink]="['/compo1']" routerLinkActive="active">compo1</a>
+    </li>
+    <li>
+        <a [routerLink]="['/httpclient']" routerLinkActive="active">httpclient</a>
+    </li>
+    <li>
+        <a [routerLink]="['/routeguards']" routerLinkActive="router-link-active" >routeguards</a>
+    </li>
+    <li>
+        <a [routerLink]="['/observables']" routerLinkActive="router-link-active" >observables</a>
+    </li>
+    <li>
+        <a [routerLink]="['/deactivate']" routerLinkActive="router-link-active" >deactivate</a>
+    </li>
+</ul>
+<h1>Hello World from about</h1>
+<li *ngFor="let item of mobiles">{{item}}</li>
+<button (click)="addfun()">Add</button>

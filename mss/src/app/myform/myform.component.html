@@ -1,0 +1,28 @@
+<p>My Form Works!</p>
+<form #login="ngForm" (ngSubmit)="fun(login)">
+  <label for="uname">Enter Name:</label>
+  <input id="uname" type="text" placeholder="Enter your name" name="uname" ngModel #un=ngModel required><br><br>
+  <p *ngIf="un.touched && un.errors?.['required']">Username is needed</p>
+  <label for="email">Enter Email:</label>
+  <input id="email" type="email" placeholder="Enter your email" name="email" ngModel required><br><br>
+  
+  <label for="phone">Enter Phone Number:</label>
+  <input id="phone" type="number" placeholder="Enter your phone number" name="phone" ngModel required><br><br>
+  
+  <label>Select Your Domain:</label>
+  <select name="selectop" ngModel>
+    <option value="" disabled selected>Select an option</option>
+    <option *ngFor="let m of topic" [value]="m">{{m}}</option>
+  </select><br><br>
+
+  <label>Select Time of Day:</label><br>
+  <div ngModelGroup name="jsf">
+  <input type="radio" name="timeOfDay" ngModel value="morning">Morning
+  <input type="radio" name="timeOfDay" ngModel value="afternoon">Afternoon
+  <input type="radio" name="timeOfDay" ngModel value="evening">Evening<br><br>
+  </div>
+  <button type="submit">Submit</button>
+  
+  <div>{{login.value | json}}</div>
+  <hr />
+</form>

@@ -1,0 +1,10 @@
+<p>demo works!</p>
+<form ngForm #nf="ngForm" (ngSubmit)="sub(nf)">
+    <div ngModelGroup #ng="ngModelGroup">
+    <input type="text" name="uname" ngModel #un="ngModel">
+    <input type="password" name="pwd" ngModel #un1="ngModel">
+    <button (click)="submit(un, un1,ng,nf)">Submit</button>
+    </div>
+</form>
+
+{{nf.value|json}}

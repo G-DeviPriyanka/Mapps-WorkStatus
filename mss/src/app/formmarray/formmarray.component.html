@@ -1,0 +1,7 @@
+<p>formmarray works!</p>
+<form [formGroup]="fm">
+  <div *ngFor="let item of fm.controls['mobiles']['controls']">
+    <input type="text" formControlName="" class="form-control w-100">
+  </div>
+  <button (click)="show()">Click</button>
+</form>

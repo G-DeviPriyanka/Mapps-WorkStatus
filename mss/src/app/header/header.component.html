@@ -1,0 +1,12 @@
+<p>header works!</p>
+<h5>This is child componnent</h5>
+<h6>Message from parent {{wishmsg}}</h6>
+<h6>Message from parent {{tit}}</h6>
+<h6 *ngFor="let m of data">Message from parent {{m}}</h6>
+<button (click)="passtoparent()">passtoparent</button>
+
+<div *ngFor="let item of items">
+    <ul>
+        <li><span>{{item.name}}</span> <span><a [routerLink]="['/demo',item.id]" >Click</a></span></li>
+    </ul>
+</div>

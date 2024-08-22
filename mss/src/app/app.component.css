@@ -1,0 +1,18 @@
+h1{
+    color:aqua;
+}
+.active
+{
+    color:red;
+}
+.inactive{
+    color:rgb(31, 157, 241);
+}
+.textcolor
+{
+    background-color: aquamarine;
+}
+.teststyle
+{
+   color:brown;
+}

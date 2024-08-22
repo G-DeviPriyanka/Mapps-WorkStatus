@@ -1,0 +1,4 @@
+<p>subjectcomponent works!</p>
+<input type="text" #en>
+<button (click)="add(en.value)">add todo</button>
+<li *ngFor="let item of todos">{{item}}</li>

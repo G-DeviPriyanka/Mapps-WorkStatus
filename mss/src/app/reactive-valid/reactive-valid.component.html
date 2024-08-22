@@ -1,0 +1,7 @@
+<p>reactive-valid works!</p>
+<form [formGroup]="reg">
+<input type="text" name="uname" formControlName="uname">
+<input type="text" name="password" formControlName="pwd">
+<button type="submit"> Click</button>
+<div *ngIf="reg.get('uname')?.touched&&reg.get('uname')?.hasError('required')">Name have to enter please fill this field</div>
+</form>

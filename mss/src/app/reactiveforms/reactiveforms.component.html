@@ -1,0 +1,48 @@
+<form [formGroup]='lname' ngForm #en="ngForm" (ngSubmit)="sub(lname)">
+    <fieldset>
+        <legend [class.active]="color">Personal Information</legend>
+    <label for="email">Enter Name:</label>
+    <input type="text" formControlName="uname" placeholder="enter name" ><br><br>
+   
+  <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('required')">
+    Username is required  </p>
+
+  <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('minlength')">
+    Username must be at least three characters </p>
+    <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('userexist')">user exists</p>
+    <label for="email">Enter Password:</label>
+    <input type="text" formControlName="pwd" placeholder="enter pwd" ><br><br>
+    <p *ngIf="lname.get('pwd')?.hasError('minlength')">Password must have 5 characters</p>
+    <p *ngIf="lname.get('pwd')?.touched && lname.get('pwd')?.hasError('uppererror')">Must contain one uppercase</p>
+    <label for="email">Enter Email:</label>
+    <input id="email" type="email" formControlName="email" placeholder="Enter your email" name="email" ><br><br>
+    <p *ngIf="lname.get('email')?.hasError('pattern')">Email must be in the format of usergmail.com</p>
+    <label for="phone">Enter Phone Number:</label>
+    <input id="phone" type="tel" placeholder="Enter your phone number" name="phone" formControlName="phone" ><br><br>
+    <p *ngIf="lname.get('phone')?.hasError('pattern')">Mobile number must have 10 digits and Only digits are accepted</p>
+    <label>Select Your Domain:</label>
+    <select name="selectop" formControlName="topic">
+      <option selected>Select an option</option>
+      <option *ngFor="let m of topic" >{{m}}</option>
+    </select><br><br>
+    <p *ngIf="lname.get('topic')?.touched && lname.get('topic')?.hasError('required')">choose one topic.</p>
+    <label>Select Time of Day:</label><br>
+    <div  name="jsf">
+    <input type="radio" name="timeOfDay"  value="morning" formControlName="timeOfDay">Morning
+    <input type="radio" name="timeOfDay"  value="afternoon" formControlName="timeOfDay">Afternoon
+    <input type="radio" name="timeOfDay"  value="evening" formControlName="timeOfDay">Evening<br><br>
+</div> 
+<div [formGroup]="address">
+<div formArrayName="add">
+    <label>Enter Address :</label>
+    <div *ngFor="let m of address.controls['add']['controls'] let i=index">
+<input type="text" formControlName="{{i}}"><br><br>
+</div>
+ <button (click)="add()">Add Address</button> 
+</div>
+</div>
+    <div [style.color]="'blue'">{{lname.value | json}}</div> 
+    <button [ngStyle]="value" (click)="submit()">submit</button>
+    <button [ngStyle]="value" (click)="reset()">Reset</button>
+    </fieldset>
+</form>

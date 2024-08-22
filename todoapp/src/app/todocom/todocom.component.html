@@ -1,0 +1,22 @@
+<p>TODO WORKS</p>
+<input type="text" [(ngModel)]="textfield"> <br>
+<div *ngIf="textfield ; then enable else disable">
+</div>
+<span>
+<ng-template #enable>
+    <button (click)='add(textfield)' [disabled]="false">Add</button>
+    <button (click)="pop()" [disabled]="false">Reset</button>
+</ng-template>
+<ng-template #disable>
+    <button [disabled]="true">Add</button>
+    <button [disabled]="true">Reset</button>
+</ng-template>
+</span>
+
+<h3>Task list</h3>
+<div *ngFor="let m of items,index as i">
+    <ul>
+        <li>{{m}}</li>
+    <button (click)="del(i)">Delete</button>
+    </ul>
+</div>
