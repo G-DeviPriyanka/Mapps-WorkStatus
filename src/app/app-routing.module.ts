@@ -1,18 +1,15 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { Module1Module } from './module1/module1.module';
+import { ShowComponent } from './show/show.component';
+import { AppComponent } from './app.component';
+import { Comp1Component } from './comp1/comp1.component';
 
 const routes: Routes = [
-  {
-    path:'',component: HomeComponent,
-  },
-  {
-    path:'module',   loadChildren:()=>
-    import ( './module1/module1.module' ).then((module:any) =>module.Module1Module)
-  }
+ 
+  
+  { path: 'show', component: ShowComponent },
+  { path:'comp1',component:Comp1Component}
+ 
 ];
 
 @NgModule({

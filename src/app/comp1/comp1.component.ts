@@ -1,17 +1,21 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SerService } from '../ser.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-comp1',
+  templateUrl: './comp1.component.html',
+  styleUrls: ['./comp1.component.css']
 })
-export class AppComponent  {
-  
-   constructor(private route:Router){this.route.navigate(['/comp1']);}
-   
+export class Comp1Component  {
+
+  constructor(private route:Router,private ser:SerService){}
+ lname=this.ser.lname;
+   sub()
+   {
+    this.ser.sub();
+   }
   //   }
   // ngOnInit(): void {
   //   this.http.post('https://fakestoreapi.com/products',{name:"hello from app.ts"}).subscribe((response)=>{console.log(response)})
@@ -41,5 +45,32 @@ export class AppComponent  {
 // {
 //    this.show=true;
 // }
-   
+showUserData: any[] = [];
+
+val=true
+
+topic=['react','javascript','angular']
+color=true
+value={
+
+  background:'green',
+  color:'white'
+}
+address=new FormGroup({
+  add:new FormArray([
+    new FormControl(),
+    
+  ])
+})
+add() {
+  const addArray = this.address.get('add') as FormArray
+  addArray?.push(new FormControl()); 
+}
+
+ 
+show() {
+  
+  this.route.navigate(['/show'])
+  this.val=false
+}
 }

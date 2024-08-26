@@ -1,26 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { Module1Module } from './module1/module1.module';  // Import here
+import { Comp1Component } from './comp1/comp1.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { InterceptInterceptor } from './intercept.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ShowComponent } from './show/show.component';
+import { SerService } from './ser.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent
-    // Do not declare TestComponent here
+    Comp1Component,
+    ShowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Module1Module  // Import the module that declares TestComponent
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [SerService,{
+    
+    provide:HTTP_INTERCEPTORS,
+    useClass:InterceptInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
