@@ -1,0 +1,41 @@
+/* Container for card deck */
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    margin: 20px; /* Space around the card deck */
+  }
+  
+  /* Individual card styling */
+  .card {
+    width: 300px; /* Fixed width for each card */
+    border: 1px solid #ddd; /* Border around the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  }
+  
+  /* Card body styling */
+  .card-body {
+    padding: 15px; /* Padding inside the card */
+  }
+  
+  .card-text {
+    margin-bottom: 10px; /* Space between text elements */
+  }
+  
+  .card-text strong {
+    color: #301c5e; /* Darker color for labels */
+  }
+  
+  .card-text {
+    color: #9aa7f0; /* Slightly lighter color for text */
+  }
+  
