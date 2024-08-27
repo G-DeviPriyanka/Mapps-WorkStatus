@@ -13,6 +13,9 @@ import { SerService } from './ser.service';
 import { LoginComponent } from './login/login.component';
 import { CustomDirective } from './custom.directive';
 import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { EditcomponentComponent } from './editcomponent/editcomponent.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { AdminComponent } from './admin/admin.component';
     ShowComponent,
     LoginComponent,
     CustomDirective,
-    AdminComponent
+    AdminComponent,
+    UserComponent,
+    EditcomponentComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
