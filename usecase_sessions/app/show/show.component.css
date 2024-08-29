@@ -1,0 +1,62 @@
+/* Container for card deck */
+.card-deck {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents cards from wrapping to the next line */
+  justify-content: center; /* Centers the cards horizontally */
+  gap: 20px; /* Space between cards */
+  margin: 20px auto; /* Space around the card deck and center it horizontally */
+  max-width: 100%; /* Allows full width for larger cards */
+  overflow-x: auto; /* Adds horizontal scroll if cards exceed viewport width */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  padding: 10px; /* Adds some padding around the card deck */
+}
+
+/* Individual card styling with increased width */
+.card {
+  flex: 0 0 400px; /* Sets a fixed width of 400px for each card */
+  border: 1px solid #ddd; /* Border around the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+/* Card body styling */
+.card-body {
+  padding: 15px; /* Padding inside the card */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Adds ellipsis if text is too long */
+}
+
+/* Card text styling */
+.card-text {
+  margin-bottom: 10px; /* Space between text elements */
+  color: #9aa7f0; /* Slightly lighter color for text */
+}
+
+.card-text strong {
+  color: #301c5e; /* Darker color for labels */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .card-deck {
+    justify-content: flex-start; /* Aligns cards to the left on smaller screens */
+  }
+
+  .card {
+    flex: 0 0 300px; /* Adjusts card width to 300px on medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    flex: 0 0 250px; /* Adjusts card width to 250px on smaller screens */
+  }
+}
