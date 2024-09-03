@@ -1,0 +1,66 @@
+/* Styling for the Navbar */
+.navbar {
+  margin-bottom: 20px;
+  color: rgb(75, 24, 216);
+  background-color: cornflowerblue;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar img {
+  border-radius: 50%;
+}
+
+.navbar .btn-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.navbar .btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Styling for the User Container */
+.user-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f5f8fa;
+  padding: 20px;
+  border-right: 1px solid #dee2e6;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #212529;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a.active, .sidebar a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Optional: Add some general styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e9ecef;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,3 @@
+<p>Course</p><div *ngFor="let m of course">
+    <a [routerLink]="['/course',m.id]" [queryParams]="{'category':m.id}">{{m.name}}</a>
+</div>
