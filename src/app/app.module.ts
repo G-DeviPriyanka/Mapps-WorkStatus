@@ -10,12 +10,47 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ShowComponent } from './show/show.component';
 import { SerService } from './ser.service';
+import { LoginComponent } from './login/login.component';
+import { CustomDirective } from './custom.directive';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { EditcomponentComponent } from './editcomponent/editcomponent.component';
+import { CourseComponent } from './course/course.component';
+import { BnNgIdleModule, BnNgIdleService } from 'bn-ng-idle';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { CertificationsComponent } from './certifications/certifications.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { TaskmanagerComponent } from './taskmanager/taskmanager.component';
+import { UsertaskComponent } from './usertask/usertask.component';
+import { AdminattendanceComponent } from './adminattendance/adminattendance.component';
+import { ObservablesModule } from './observables/observables.module';
+
+import { EmployeeService } from './employee.service';
+
+import { PerformanceReviewComponent } from './performance-review/performance-review.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     Comp1Component,
-    ShowComponent
+    ShowComponent,
+    LoginComponent,
+    CustomDirective,
+    AdminComponent,
+    UserComponent,
+    EditcomponentComponent,
+    CourseComponent,
+    DashboardComponent,
+    AttendanceComponent,
+    CertificationsComponent,
+    EmployeeComponent,
+    TaskmanagerComponent,
+    UsertaskComponent,
+    AdminattendanceComponent,
+  
+    PerformanceReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,9 +58,10 @@ import { SerService } from './ser.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    ObservablesModule
   ],
-  providers: [SerService,{
+  providers: [SerService,BnNgIdleService,EmployeeService,{
     
     provide:HTTP_INTERCEPTORS,
     useClass:InterceptInterceptor,

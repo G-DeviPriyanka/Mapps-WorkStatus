@@ -1,19 +1,13 @@
-<div class="container my-4">
-    <div class="row">
-      <div class="col-md-4 mb-4" *ngFor="let user of userdata , let i=index">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">User Information</h5>
-            <p class="card-text"><strong>Name: </strong>{{ user.uname }}</p>
-            <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
-            <p class="card-text"><strong>Phone:</strong> {{ user.phone }}</p>
-            <p class="card-text"><strong>Topic:</strong> {{ user.topic }}</p>
-            <p class="card-text"><strong>Time of Day:</strong> {{ user.timeOfDay }}</p>
-            <button class="btn btn-primary" (click)="reset(user,i)">Delete</button>
-            <button class="btn btn-secondary" style="margin-left:15px;" (click)="edit(user,i)">Edit</button>
-          </div>
-        </div>
+<div class="card-deck">
+  <ng-container *ngFor="let user of userdata; let i = index">
+    <div class="card" *ngIf="user.email !== 'admin@gmail.com'">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.uname }}</h5>
+        <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+        <p class="card-text"><strong>Phone:</strong> {{ user.phone }}</p>
+        <p class="card-text"><strong>Topic:</strong> {{ user.topic }}</p>
+        <button (click)="reset(user, i)" class="btn btn-danger">Delete</button>
       </div>
     </div>
-  </div>
-  
+  </ng-container>
+</div>

@@ -1,15 +1,16 @@
-<div class=" container justify-content-center align-items-center  w-50">
+<div class=" container justify-content-center align-items-center  w-50" >
     <form [formGroup]='lname' >
       <fieldset class="field">
-        <legend [class.active]="color"> Information</legend>
+        <legend [class.active]="color"> Signup</legend>
         <div class="mb-3">
+          
           <label for="uname" class="form-label">Enter Name:</label>
           <input type="text" id="uname" formControlName="uname" class="form-control" placeholder="enter name">
           <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('required')" class="text-danger">
             Username is required
           </p>
           <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('minlength')" class="text-danger">
-            Username must be at least three characters
+            Username must be at least three characters are required
           </p>
           <p *ngIf="lname.get('uname')?.touched && lname.get('uname')?.hasError('userexist')" class="text-danger">
             User exists
@@ -27,6 +28,7 @@
           <label for="email" class="form-label">Enter Email:</label>
           <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter your email">
           <p *ngIf="lname.get('email')?.hasError('pattern')" class="text-danger">Email must be valid in the default form</p>
+          <p *ngIf="lname.get('email')?.hasError('emailexist')" class="text-danger">Sorry unable to consider Email exists</p>
         </div>
         
         <div class="mb-3">
@@ -37,7 +39,7 @@
         
         <div class="mb-3">
           <label class="form-label">Select Your Domain:</label>
-          <select name="selectop" formControlName="topic" class="form-select">
+          <select name="selectop" formControlName="topic" class="form-select" required>
             <option selected>Select an option</option>
             <option *ngFor="let m of topic">{{m}}</option>
           </select>
@@ -69,14 +71,17 @@
         </div>
         
         <div class="mt-3">
-          <button type="submit" class="btn btn-success" style="margin-right: 15px;" (click)="sub()">Submit</button>
-          
-          <button type="button" (click)="show()"class="btn btn-secondary">Show</button>
+
+          <button type="submit" class="btn btn-success" style="margin-right: 15px;" (click)="sub()" [disabled]="!lname.valid" >Submit</button>
+        <!--  <button type="button" (click)="show()"class="btn btn-secondary" style="margin-right: 15px;" >Show</button>-->
+          <button  click="move()"class="btn btn-success"[routerLink]="['/login']">Login</button>
         </div>
       </fieldset>
     </form> 
   </div>
 <router-outlet></router-outlet>
+
+
 
 
 

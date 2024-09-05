@@ -7,26 +7,21 @@ import { SerService } from '../ser.service';
   styleUrls: ['./show.component.css']
 })
 export class ShowComponent implements OnInit {
-  constructor(private ser:SerService) { }
- lname1=this.ser.lname;
-  ngOnInit(): void {
+  lname1: any;
+  userdata: any[] = [];
+
+  constructor(private ser: SerService) { 
+    this.lname1 = this.ser.lname; 
   }
-  
-  storedUsers = sessionStorage.getItem('users');
-  userdata:any[]=[] = this.storedUsers ? JSON.parse(this.storedUsers) : [];
-   
-  reset(user:any,i:any)
-  {
-    this.userdata.splice(i,1);
-    sessionStorage.removeItem("user");
+
+  ngOnInit(): void {
+    const storedUsers = sessionStorage.getItem('users');
+    this.userdata = storedUsers ? JSON.parse(storedUsers) : [];
+  }
+
+  reset(user: any, i: any) {
+    this.userdata.splice(i, 1);
+    sessionStorage.setItem('users', JSON.stringify(this.userdata)); // Update sessionStorage after deletion
     console.log(this.userdata);
   }
-  edit(user:any ,i:any)
-  {
-    let h=this.userdata.indexOf(user)
-    console.log(this.userdata.find(x=>x.indexOf(user)==h));
-    
-  }
-    
-  
 }
