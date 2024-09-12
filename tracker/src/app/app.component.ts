@@ -18,7 +18,7 @@ export class AppComponent {
   income: { amount: number, description: string }[] = [];
   editIndex: number | null = null;
   editType: 'income' | 'expense' | null = null;
-
+chart:any
   calculate() {
     const firstControl = this.lname.get('first');
     const secondControl = this.lname.get('second');
@@ -50,32 +50,38 @@ export class AppComponent {
     this.lname.reset();
   }
 
+  getTotalIncome(): number {
+    return this.income.reduce((acc, item) => acc + item.amount, 0);
+  }
+
+  getTotalExpense(): number {
+    return this.expense.reduce((acc, item) => acc + item.amount, 0);
+  }
+
   edit(item: { amount: number, description: string }, type: 'income' | 'expense') {
     let arrayToEdit = type === 'income' ? this.income : this.expense;
     const index = arrayToEdit.findIndex(i => i === item);
-  
+
     if (index !== -1) {
       this.lname.setValue({
-        first: item.amount.toString(), 
+        first: item.amount.toString(),
         second: item.description
       });
       this.amt -= item.amount;
     }
   }
-  del(item: { amount: number, description: string }, type: 'income' | 'expense')
-  {
+  
+  del(item: { amount: number, description: string }, type: 'income' | 'expense') {
     let arrayToEdit = type === 'income' ? this.income : this.expense;
     const index = arrayToEdit.findIndex(i => i === item);
-  
+
     if (index !== -1) {
       this.lname.setValue({
         first: item.amount.toString(),
         second: item.description
       });
       arrayToEdit.splice(index, 1);
-
       this.amt -= item.amount;
     }
   }
-  
 }

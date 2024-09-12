@@ -1,4 +1,4 @@
-<div>The Resultant Amount :{{ amt |currency : 'INR' :'symbol'}}</div>
+<div>The Resultant Amount: {{ amt | currency: 'INR' :'symbol' }}</div>
 <form [formGroup]="lname" class="form-container">
   <input type="text" formControlName="first" placeholder="Amount">
   <input type="text" formControlName="second" placeholder="Description">
@@ -19,7 +19,7 @@
     </div>
     <div class="table-container">
       <p>Income</p>
-      <table>
+       <table>
         <tr *ngFor="let item of income; let i = index">
           <td>{{ item | json }}</td>
           <td>
@@ -31,3 +31,9 @@
     </div>
   </div>
 </form>
+
+<!-- Pass total income and expense to the pie chart component -->
+<app-piechart [incomeTotal]="getTotalIncome()" [expenseTotal]="getTotalExpense()"></app-piechart>
+<div class="chart-container">
+  <canvas id="MyChart">{{ chart }}</canvas>
+</div>
