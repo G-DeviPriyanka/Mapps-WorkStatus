@@ -1,0 +1,48 @@
+input.ng-touched.ng-invalid{
+    border-style: solid;
+    border-color: red;
+    border-width:3px;
+}
+input.ng-touched.ng-valid{
+    border-style: solid;
+    border-color: rgb(36, 219, 11);
+    border-width:3px;
+}
+p{
+    color:rgb(19, 97, 170);
+}
+.active
+{
+    text-align: center;
+    color:rgb(245, 22, 22)
+}
+label{
+    color:blueviolet
+}
+.field{
+  
+  
+  color: black;
+}
+/* Adjust card width and alignment if needed */
+.card {
+    width: 100%;
+    max-width: 500px; /* Set a maximum width if needed */
+    margin: 0 auto; /* Center the card */
+  }
+  
+  /* Optional: Custom styles */
+  .fieldset {
+    border: none; /* Remove default border */
+    padding: 0; /* Remove padding */
+  }
+  
+  .legend {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .form-label {
+    margin-bottom: 0.5rem;
+  }
+  
