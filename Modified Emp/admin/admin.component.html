@@ -1,0 +1,33 @@
+<!-- app.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Profile Icon" class="img-fluid rounded-circle" style="width: 40px; height: 40px;">
+      <span class="me-3">
+        <strong>{{ msg }}</strong>
+        <br>
+        <small>{{ adminEmail }}</small>
+      </span>
+      <span>Welcome to Admin panel</span>
+      <a class="btn btn-link ms-3 pull-right" href="#">Logout</a>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="user-container">
+  <div class="sidebar">
+    
+    
+    <a routerLink="taskmanager">Task Manager</a>
+    <a routerLink="show">Show Users</a>
+    <a routerLink="adminattendance">Attendance</a>
+    <a routerLink="performance-review">perfomance-review</a>
+  </div>
+  <div class="content">
+    
+  </div>
+</div>
+<router-outlet></router-outlet>
+
