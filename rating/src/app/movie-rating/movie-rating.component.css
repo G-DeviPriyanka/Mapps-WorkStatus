@@ -1,0 +1,83 @@
+/* movie-rating.component.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Light background color */
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width */
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  button {
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s; /* Smooth transition */
+    width: 100%; /* Full width button */
+    
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+  }
+  
+  li {
+    background-color: #e9ecef; /* Light grey background for movie items */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  div {
+    margin-bottom: 15px; /* Space between form elements */
+  }
+  
+  div div {
+    color: #dc3545; /* Red color for validation messages */
+    font-size: 0.875em; /* Smaller font size for error messages */
+  }
+  
