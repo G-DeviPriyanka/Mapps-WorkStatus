@@ -1,0 +1,77 @@
+<!-- src/app/movie-rating/movie-rating.component.html -->
+<h1>Movie Rating</h1>
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Movie Title</label>
+    <input id="title" formControlName="title" placeholder="Enter movie title" />
+    <div *ngIf="movieForm.get('title')?.invalid && movieForm.get('title')?.touched">
+      Title is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="genre">Genre</label>
+    <input id="genre" formControlName="genre" placeholder="Enter movie genre" />
+    <div *ngIf="movieForm.get('genre')?.invalid && movieForm.get('genre')?.touched">
+      Genre is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="director">Director</label>
+    <input id="director" formControlName="director" placeholder="Enter director's name" />
+    <div *ngIf="movieForm.get('director')?.invalid && movieForm.get('director')?.touched">
+      Director's name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="cast">Cast</label>
+    <input id="cast" formControlName="cast" placeholder="Enter main actors (comma separated)" />
+    <div *ngIf="movieForm.get('cast')?.invalid && movieForm.get('cast')?.touched">
+      Cast is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="releaseDate">Release Date</label>
+    <input id="releaseDate" type="date" formControlName="releaseDate" />
+    <div *ngIf="movieForm.get('releaseDate')?.invalid && movieForm.get('releaseDate')?.touched">
+      Release date is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="duration">Duration (minutes)</label>
+    <input id="duration" type="number" formControlName="duration" placeholder="Enter duration in minutes" />
+    <div *ngIf="movieForm.get('duration')?.invalid && movieForm.get('duration')?.touched">
+      Duration is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="rating">Rating (1 to 5)</label>
+    <input id="rating" type="number" formControlName="rating" placeholder="Rate 1-5" />
+    <div *ngIf="movieForm.get('rating')?.invalid && movieForm.get('rating')?.touched">
+      Rating must be between 1 and 5.
+    </div>
+  </div>
+
+  <div>
+    <label for="review">Review</label>
+    <textarea id="review" formControlName="review" placeholder="Write your review here"></textarea>
+    <div *ngIf="movieForm.get('review')?.invalid && movieForm.get('review')?.touched">
+      Review is required.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="movieForm.invalid">Submit</button>
+</form>
+
+<h2>Rated Movies</h2>
+<ul>
+  <li *ngFor="let movie of movies">
+    <strong>{{ movie.title }}</strong> - Genre: {{ movie.genre }}, Director: {{ movie.director }}, Cast: {{ movie.cast }}, Release Date: {{ movie.releaseDate | date }}, Duration: {{ movie.duration }} mins, Rating: {{ movie.rating }}<br>
+    Review: {{ movie.review }}
+  </li>
+</ul>

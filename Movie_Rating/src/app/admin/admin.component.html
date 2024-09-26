@@ -1,0 +1,20 @@
+<h1>Add Movie</h1>
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Movie Title</label>
+    <input id="title" formControlName="title" placeholder="Enter movie title" />
+    <div *ngIf="movieForm.get('title')?.invalid && movieForm.get('title')?.touched">
+      Title is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="rating">Rating (1 to 5)</label>
+    <input id="rating" type="number" formControlName="rating" placeholder="Rate 1-5" />
+    <div *ngIf="movieForm.get('rating')?.invalid && movieForm.get('rating')?.touched">
+      Rating must be between 1 and 5.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="movieForm.invalid">Add Movie</button>
+</form>
